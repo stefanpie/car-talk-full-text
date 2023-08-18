@@ -1,0 +1,86 @@
+html,
+body {
+  width: 100%;
+  height: 100%;
+  font: 14px "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto auto 1fr 2fr;
+
+  grid-template-areas:
+    "header"
+    "search"
+    "main"
+    "text";
+}
+
+h1 {
+  grid-area: header;
+  text-align: center;
+  padding: 1rem;
+  border-bottom: 1px solid #ccc;
+  border-collapse: collapse;
+}
+
+#user-search {
+  grid-area: search;
+  padding: 1rem;
+  margin: 1rem;
+  margin-bottom: 0;
+  font-size: 1.5rem;
+  border: 1px solid #ccc;
+}
+
+.main-area {
+  grid-area: main;
+  height: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr;
+  gap: 1rem;
+  padding: 1rem;
+}
+
+.main-area > div {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto 1fr;
+  border: 1px solid #ccc;
+  padding: 1rem;
+}
+
+.main-area > div > h2 {
+  text-align: center;
+  padding-bottom: 1rem;
+}
+
+.main-area > div > ul {
+  list-style-type: none !important;
+  overflow-y: auto;
+}
+
+.main-area > div > ul > li {
+  border-bottom: 1px solid #ccc;
+  padding: 0.2rem;
+}
+
+.main-area > div > ul > li:hover {
+  background-color: #ccc;
+  cursor: pointer;
+}
+
+#text {
+  grid-area: text;
+  padding: 1rem;
+  margin: 1rem;
+  border: 1px solid #ccc;
+}
